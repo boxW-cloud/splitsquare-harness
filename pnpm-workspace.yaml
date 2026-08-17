@@ -1,0 +1,23 @@
+packages:
+  - .
+
+# Electron Forge's pinned rebuild tool uses the official Electron node-gyp fork
+# directly from GitHub. This exception is scoped to this standalone workspace;
+# minimumReleaseAge remains enabled for registry packages.
+blockExoticSubdeps: false
+
+# Electron Forge needs a physical, hoisted dependency tree for packaging and
+# production pruning. pnpm 11 reads this project setting from the workspace file.
+nodeLinker: hoisted
+
+# pnpm blocks lifecycle scripts unless each native/install boundary is reviewed.
+allowBuilds:
+  electron: true
+  esbuild: true
+  node-pty: true
+  koffi: true
+  sharp: true
+  electron-winstaller: true
+  '@deepseek-ai/dsh-subprocess-local': true
+  '@google/genai': false
+  protobufjs: false

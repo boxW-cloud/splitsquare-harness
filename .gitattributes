@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+*.cjs text eol=lf
+*.ico binary
+*.png binary
+*.svg text eol=lf
+pnpm-lock.yaml text eol=lf

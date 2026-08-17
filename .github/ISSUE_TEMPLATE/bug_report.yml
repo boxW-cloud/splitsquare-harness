@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible desktop-shell defect (not a private security issue).
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include API keys, credentials, private session content, or vulnerability details. Use the Security tab for vulnerabilities.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version and architecture
+      placeholder: Windows 11 24H2, x64
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest reliable sequence.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Remove credentials, local paths, session text, and personal information.

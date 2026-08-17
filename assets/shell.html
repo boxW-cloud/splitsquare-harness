@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SplitSquare Harness</title>
+  <link rel="icon" href="./icon.svg">
+  <link rel="stylesheet" href="./shell.css">
+</head>
+<body>
+  <header class="titlebar" aria-label="应用标题栏">
+    <div class="brand" aria-label="SplitSquare Harness">
+      <img class="brand-mark" src="./icon.svg" alt="">
+      <span>SplitSquare Harness</span>
+    </div>
+    <nav class="menu-list" aria-label="应用菜单">
+      <button type="button" data-menu="file">文件</button>
+      <button type="button" data-menu="remote">远程访问</button>
+      <button type="button" data-menu="view">视图</button>
+      <button type="button" data-menu="window">窗口</button>
+      <button type="button" data-menu="help">帮助</button>
+    </nav>
+  </header>
+  <nav class="toolbar" aria-label="页面导航">
+    <button class="tool-button sidebar-button" type="button" data-command="toggle-sidebar" aria-label="切换侧边栏" title="切换侧边栏">
+      <img src="./nav-panel-left.svg" alt="">
+    </button>
+    <button class="tool-button" type="button" data-command="back" aria-label="后退" title="后退" disabled>
+      <img src="./nav-back.svg" alt="">
+    </button>
+    <button class="tool-button" type="button" data-command="forward" aria-label="前进" title="前进" disabled>
+      <img src="./nav-forward.svg" alt="">
+    </button>
+  </nav>
+  <script src="./shell-renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img">
+  <title>SplitSquare mark</title>
+  <rect x="16" y="16" width="224" height="224" fill="#ffffff"/>
+  <path d="M16 16H240L16 240Z" fill="#111111"/>
+  <rect x="16" y="16" width="224" height="224" fill="none" stroke="#111111" stroke-width="16"/>
+</svg>

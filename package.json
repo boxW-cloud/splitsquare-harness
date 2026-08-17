@@ -1,0 +1,63 @@
+{
+  "name": "splitsquare-harness-desktop",
+  "productName": "SplitSquare Harness",
+  "version": "0.2.0",
+  "description": "An independent, full-capability Windows desktop shell for composable AI agent workflows",
+  "author": "SplitSquare Harness contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boxW-cloud/splitsquare-harness.git"
+  },
+  "homepage": "https://github.com/boxW-cloud/splitsquare-harness#readme",
+  "bugs": {
+    "url": "https://github.com/boxW-cloud/splitsquare-harness/issues"
+  },
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=24.11.1 <25"
+  },
+  "keywords": [
+    "agent",
+    "desktop",
+    "electron",
+    "harness"
+  ],
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "postinstall": "install-electron",
+    "clean:dist": "node scripts/clean-dist.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.forge.json",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check:release": "node scripts/check-public-release.mjs",
+    "licenses": "node scripts/generate-third-party-notices.mjs",
+    "licenses:check": "node scripts/generate-third-party-notices.mjs --check",
+    "build": "pnpm run clean:dist && tsc -p tsconfig.json && tsc -p tsconfig.forge.json",
+    "start": "pnpm run build && electron-forge start",
+    "test": "pnpm run build && vitest run",
+    "test:unit": "vitest run tests/ready-url.spec.ts tests/navigation-policy.spec.ts tests/log-buffer.spec.ts",
+    "audit:prod": "pnpm audit --prod --audit-level high",
+    "ci": "pnpm run check:secrets && pnpm run licenses:check && pnpm run test",
+    "package": "pnpm run test && electron-forge package",
+    "make": "pnpm run test && electron-forge make",
+    "verify": "pnpm run ci && electron-forge package"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.1.0-rc.6",
+    "electron-squirrel-startup": "1.0.1",
+    "selfsigned": "5.5.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "7.11.2",
+    "@electron-forge/maker-squirrel": "7.11.2",
+    "@electron-forge/shared-types": "7.11.2",
+    "@types/node": "24.13.3",
+    "@types/ws": "8.18.1",
+    "electron": "43.4.0",
+    "typescript": "6.0.3",
+    "vitest": "4.1.8",
+    "ws": "8.21.3"
+  }
+}
