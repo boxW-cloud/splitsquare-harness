@@ -45,7 +45,7 @@
     "verify": "pnpm run ci && electron-forge package"
   },
   "dependencies": {
-    "@deepseek-ai/dsh": "0.1.0-rc.6",
+    "@deepseek-ai/dsh": "0.1.0-rc.8",
     "electron-squirrel-startup": "1.0.1",
     "selfsigned": "5.5.0"
   },
